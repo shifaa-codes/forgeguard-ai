@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { color-scheme: dark; }
+  body {
+    @apply bg-base text-ink font-sans antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 15% -10%, rgba(181,136,99,0.08), transparent 60%),
+      radial-gradient(1000px 500px at 90% 0%, rgba(74,158,255,0.06), transparent 55%),
+      radial-gradient(900px 700px at 50% 110%, rgba(139,92,246,0.05), transparent 60%);
+    background-attachment: fixed;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #0B1114; }
+  ::-webkit-scrollbar-thumb {
+    background: #2a3b42; border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #3D4D55; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-[rgba(16,26,31,0.65)] backdrop-blur-xl border border-white/[0.06];
+  }
+  .card {
+    @apply glass rounded-2xl p-5 shadow-[0_4px_24px_rgba(0,0,0,0.35)];
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(0,0,0,0.5)];
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl
+           bg-gradient-to-b from-warm to-[#9a6f4d] text-[#0B1114]
+           font-semibold text-sm shadow-glow-warm
+           hover:brightness-110 active:scale-[0.98] transition-all;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl
+           bg-white/[0.04] border border-white/[0.08] text-ink
+           font-medium text-sm hover:bg-white/[0.08] hover:border-white/[0.15]
+           transition-all active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-2 rounded-lg
+           text-muted hover:text-ink hover:bg-white/[0.05] transition-all text-sm;
+  }
+  .input {
+    @apply w-full bg-base/60 border border-white/[0.08] rounded-xl
+           px-4 py-2.5 text-sm text-ink placeholder:text-muted
+           focus:outline-none focus:border-warm/50 focus:ring-2 focus:ring-warm/15
+           transition-all;
+  }
+  .kbd {
+    @apply font-mono text-xs px-2 py-0.5 rounded-md bg-white/[0.06] border border-white/[0.08] text-ink-soft;
+  }
+  .stat-value {
+    @apply font-mono text-3xl font-bold tracking-tight text-ink;
+  }
+  .label {
+    @apply text-[11px] uppercase tracking-[0.14em] text-muted font-semibold;
+  }
+  .divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/[0.08] to-transparent;
+  }
+}

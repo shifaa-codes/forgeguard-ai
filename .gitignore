@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+backend/venv/
+backend/__pycache__/
+backend/*.db
+
+# Node
+node_modules/
+dist/
+build/
+.vite/
+
+# Environment
+.env
+.env.local
+backend/.env
+
+# Model files (large)
+*.pt
+*.onnx
+*.pth
+models/*.pt
+backend/models/*.pt
+
+# Uploads (user content)
+uploads/
+backend/uploads/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
